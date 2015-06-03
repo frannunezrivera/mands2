@@ -1,0 +1,20 @@
+div.thumbs a {
+    text-decoration: none;
+}
+
+#validation input {
+	padding: 6px;
+}
+
+#validation .error {
+    margin-right: 10px;
+    border: 1px solid rgb(205, 37, 37);
+}
+
+#from {
+    width: 400px;
+}
+
+#to {
+    font-weight: bold;
+}
