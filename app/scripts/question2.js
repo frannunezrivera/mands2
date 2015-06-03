@@ -12,19 +12,27 @@ var Q2 = {
                 var msg = this.errorMessages[validationObj.validation] || this.errorMessages['default'];
                 var field = validationObj.el;
 
-                field.classList.add('error');
-                field.nextElementSibling.innerHTML = msg;
-                field.nextElementSibling.style.display = '';
-                //validationForm.find('.btn-success').attr('disabled', 'disabled');
+                try {
+                    field.classList.add('error');
+                    field.nextElementSibling.innerHTML = msg;
+                    field.nextElementSibling.style.display = '';
+                } catch (e) {
+                    throw 'Missing error span';
+                }
 
             },
 
             hideErrorMsg: function(validationObj) {
                 var field = validationObj.el;
 
-                field.classList.remove('error');
-                field.nextElementSibling.innerHTML = '';
-                field.nextElementSibling.style.display = 'none';
+                try {
+                    field.classList.remove('error');
+                    field.nextElementSibling.innerHTML = '';
+                    field.nextElementSibling.style.display = 'none';
+                } catch (e) {
+                    throw 'Missing error span';
+                }
+
             },
 
             // The error messages for the validation should have the same name as the validation functions
